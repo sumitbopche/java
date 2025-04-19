@@ -1,0 +1,62 @@
+// Define the interface
+ interface Shape {
+     void draw(); // Abstract method
+     double calculateArea(); // Abstract method
+ }
+ 
+ // Implement the interface in Circle class
+ class Circle implements Shape {
+     double radius;
+ 
+     Circle(double radius) {
+         this.radius = radius;
+     }
+ 
+     @Override
+     public void draw() {
+         System.out.println("Drawing a Circle");
+     }
+ 
+     @Override
+     public double calculateArea() {
+         return Math.PI * radius * radius;
+     }
+ }
+ 
+ // Implement the interface in Rectangle class
+ class Rectangle implements Shape {
+     double length;
+     double width;
+ 
+     Rectangle(double length, double width) {
+         this.length = length;
+         this.width = width;
+     }
+ 
+     @Override
+     public void draw() {
+         System.out.println("Drawing a Rectangle");
+     }
+ 
+     @Override
+     public double calculateArea() {
+         return length * width;
+     }
+ }
+ 
+ // Main class
+ public class Main {
+     public static void main(String[] args) {
+         // Create objects implementing the Shape interface
+         Shape circle = new Circle(5);
+         Shape rectangle = new Rectangle(4, 6);
+ 
+         // Call methods on Circle
+         circle.draw();
+         System.out.println("Circle Area: " + circle.calculateArea());
+ 
+         // Call methods on Rectangle
+         rectangle.draw();
+         System.out.println("Rectangle Area: " + rectangle.calculateArea());
+     }
+ }
