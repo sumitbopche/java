@@ -1,0 +1,40 @@
+// Generic class
+class Box<T> {
+    private T value;
+
+    // Method to set value
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    // Method to get value
+    public T getValue() {
+        return value;
+    }
+}
+
+// Class with a generic method
+class Utility {
+    // Generic method
+    public static <T> void display(T element) {
+        System.out.println("Element: " + element);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using the generic class
+        Box<Integer> intBox = new Box<>(); // Box for Integer type
+        intBox.setValue(123);
+        System.out.println("Integer Value: " + intBox.getValue());
+
+        Box<String> strBox = new Box<>(); // Box for String type
+        strBox.setValue("Hello, Generics!");
+        System.out.println("String Value: " + strBox.getValue());
+
+        // Using the generic method
+        Utility.display(100); // Pass an Integer
+        Utility.display("Generic Method Example"); // Pass a String
+        Utility.display(45.67); // Pass a Double
+    }
+}
